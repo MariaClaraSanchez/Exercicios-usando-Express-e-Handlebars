@@ -22,7 +22,7 @@ app.use(bodyParse.urlencoded({extended:true}));
 /*Página Home*/
 app.get("/",function(request,response){
     response.render('home',{
-        tituloPagina:  'Lista Programação Web 2'
+        tituloPagina:  'Lista 1 de Programação Web 2'
     })
 });
 
