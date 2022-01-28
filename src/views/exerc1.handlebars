@@ -3,8 +3,16 @@
 
 <form method="post" action="/exerc1">
     <p>
-        Número: <br>
+        Número: 
         <input type="number" name="numero" value="">
     </p>
-    <button> Enviar </button>
+    <button type="button" class="btn btn-primary">Enviar</button>
+
+    {{#if erro}}
+        <div class="alert alert-danger" role="alert">{{mensagemErro}}</div>
+    {{else}}
+        {{#if tipo}}
+            <p>Número : {{tipo}}</p>
+        {{/if}}
+    {{/if}}
 </form>
