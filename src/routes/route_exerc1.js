@@ -1,6 +1,5 @@
 const express = require('express');
 const Router = express.Router();
-const bodyParse = require('body-parser');
 
 /*Exercício 1 */
 Router.get('/exerc1', function (request, response) {
@@ -13,21 +12,21 @@ Router.post('/exerc1', function (request, response) {
     const { numero } = request.body;
     const erro = false;
 
-    console.log(numero);
-
-    if (numero==null) {
+    if (!numero) {
         return response.render('exerc1', {
             erro: true,
             mensagemErro: 'Por favor digite algum número pois é um campo obrigatório!!',
         });
     }
-
-    if (numero >0)
+    if (numero >0){
         response.render('exerc1', { tipo: 'POSITIVO' }, erro);
-    else if (numero <0)
+    }
+    else if (numero <0){
         response.render('exerc1', { tipo: 'NEGATIVO' }, erro);
-    else
+    }
+    else{
         response.render('exerc1', { tipo: 'IGUAL A ZERO' }, erro);
+    }
 });
 
 module.exports = Router;

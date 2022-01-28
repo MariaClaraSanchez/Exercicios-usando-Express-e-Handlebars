@@ -2,11 +2,10 @@
 
 
 <form method="post" action="/exerc1">
-    <p>
-        Número: 
-        <input type="number" name="numero" value="">
-    </p>
-    <button type="button" class="btn btn-primary">Enviar</button>
+    <p>Número:</p>
+    <input type="number" name="numero" value=""/>
+
+    <button type="submit" class="btn btn-primary">Enviar</button>
 
     {{#if erro}}
         <div class="alert alert-danger" role="alert">{{mensagemErro}}</div>
