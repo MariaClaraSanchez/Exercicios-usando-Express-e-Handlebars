@@ -1,0 +1,25 @@
+<h2>{{tituloPagina}}</h2>
+
+
+<form method="post" action="/exerc5">
+    <p>Digite os dados do seu salário mensal e o reajuste do mesmo. <br> 
+    Lembrando que é preciso apenas colocar o valor pois já está em porcentagem:</p>
+
+    <div>
+        <input type="text" name="salario" placeholder="Salário Mensal : 1500.00" />
+        <input type="text" name="reajuste" placeholder="Reajuste : 5"/>
+    
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </div>
+
+    {{#if erro}}
+        <div class="alert alert-danger" role="alert">{{mensagemErro}}</div>
+    {{else}}
+        {{#if salarioConvertido}}
+        <div>
+            <p><strong>Novo salário:</strong> R$ {{salarioConvertido}}</p>
+        </div>
+        {{/if}}
+    {{/if}}
+
+</form>
