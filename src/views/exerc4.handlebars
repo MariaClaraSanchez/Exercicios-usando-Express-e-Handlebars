@@ -1,0 +1,23 @@
+<h2>{{tituloPagina}}</h2>
+
+
+<form method="post" action="/exerc4">
+    <p>Digite o custo da fábrica do carro : </p>
+
+    <div>
+        <p>Digite o custo da fábrica: </p>
+        <input type="text" name="custoFabrica" placeholder="Exemplo: 100000.00" />
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </div>
+
+    {{#if erro}}
+        <div class="alert alert-danger" role="alert">{{mensagemErro}}</div>
+    {{else}}
+        {{#if custo_total}}
+        <div>
+            <p><strong>Custo Total do veículo é: </strong> R${{custo_total}},00</p>
+        </div>
+        {{/if}}
+    {{/if}}
+
+</form>
