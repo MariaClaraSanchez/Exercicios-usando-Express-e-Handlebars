@@ -1,0 +1,25 @@
+<h2>{{tituloPagina}}</h2>
+
+
+<form method="post" action="/exerc6">
+    <p>Digite as 3 notas</p>
+
+    <div>
+        <input type="text" name="nota1" placeholder="Nota 1 : 5.7" />
+        <input type="text" name="nota2" placeholder="Nota 2 : 6.5" />
+        <input type="text" name="nota3" placeholder="Nota 3 : 8.9" />
+    
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </div>
+
+    {{#if erro}}
+        <div class="alert alert-danger" role="alert">{{mensagemErro}}</div>
+    {{else}}
+        {{#if situacao}}
+        <div>
+            <p><strong>Você está:</strong> {{situacao}} <strong>nota:</strong> {{mediaNotas}}</p>
+        </div>
+        {{/if}}
+    {{/if}}
+
+</form>
