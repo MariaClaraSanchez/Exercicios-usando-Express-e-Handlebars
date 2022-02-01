@@ -1,0 +1,27 @@
+<h2>{{tituloPagina}}</h2>
+
+
+<form method="post" action="/exerc9">
+    <p>Digite os dados abaixo:</p>
+
+    <div>
+        <input type="number" min = 1 name="litros" placeholder="Litros: 20"/>
+        <select name="tipo">
+            <option>Álcool</option>
+            <option>Gasolina</option>
+        </select>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </div>
+
+    {{#if erro}}
+        <div class="alert alert-danger" role="alert">{{mensagemErro}}</div>
+    {{else}}
+        {{#if categoria}}
+        <div>
+            <p><strong>O tipo do combustível é:</strong> {{categoria}}  <br>
+            <strong>Valor a pagar:</strong> R$ {{valor_pago}}</p>
+        </div>
+        {{/if}}
+    {{/if}}
+
+</form>
