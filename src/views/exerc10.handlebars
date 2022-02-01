@@ -1,0 +1,29 @@
+<h2>{{tituloPagina}}</h2>
+
+
+<form method="post" action="/exerc10">
+    <p>Digite os dados abaixo:</p>
+
+    <div>
+        <p>Ano de Nascimento:
+            <input type="text" name="ano_nascimento" placeholder="Ano: 1998"/>
+        </p>
+        <p>Ano Ingresso na Empresa:
+            <input type="text" name="ano_ingresso" placeholder="Ano: 2021"/>
+        </p>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </div>
+
+    {{#if erro}}
+        <div class="alert alert-danger" role="alert">{{mensagemErro}}</div>
+    {{else}}
+        {{#if situacao}}
+                <div>
+                    <strong>Idade:</strong> {{idade_atual}} Anos <br>
+                    <strong>Tempo de trabalho:</strong> {{tempo_servico}} ano_ingresso<br>
+                    <strong>Situação:</strong> {{situacao}}
+                </div>
+        {{/if}}
+    {{/if}}
+
+</form>
