@@ -28,10 +28,6 @@ Router.post('/exerc8', function (request, response) {
     var salario_final = 0;
     var diferenca = 0;
     
-/*     if(valor_venda_convertida == 0){
-        salario_final = salario_convertido;
-        response.render('exerc8',{salario_final},erro);
-    } */
     if(valor_venda_convertida > 1500){
         salario_comissao_1500 = salario_convertido + (1500* 0.03);
         diferenca = valor_venda_convertida - 1500;
