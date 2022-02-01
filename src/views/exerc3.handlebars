@@ -1,0 +1,24 @@
+<h2>{{tituloPagina}}</h2>
+
+
+<form method="post" action="/exerc3">
+    <p>Digite seus dados:</p>
+
+    <div>
+        <input type="text" name="altura" placeholder="Altura : 1.7 (Metros)" />
+        <input type="text" name="peso" placeholder="Peso : 80 (Quilos)" />
+    
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </div>
+
+    {{#if erro}}
+        <div class="alert alert-danger" role="alert">{{mensagemErro}}</div>
+    {{else}}
+        {{#if IMC}}
+        <div>
+            <p><strong>IMC:</strong> {{IMC}}</p>
+        </div>
+        {{/if}}
+    {{/if}}
+
+</form>

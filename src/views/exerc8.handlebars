@@ -1,0 +1,24 @@
+<h2>{{tituloPagina}}</h2>
+
+
+<form method="post" action="/exerc8">
+    <p>Digite os dados abaixo:</p>
+
+    <div>
+        <input type="text" name="salario_fixo" placeholder="Salário: 1500"/>
+        <input type="text" name="valor_venda" placeholder="Venda total: 2000"/>
+    
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </div>
+
+    {{#if erro}}
+        <div class="alert alert-danger" role="alert">{{mensagemErro}}</div>
+    {{else}}
+        {{#if salario_final}}
+        <div>
+            <p><strong>Salário total é: </strong> R$ {{salario_final}}</p>
+        </div>
+        {{/if}}
+    {{/if}}
+
+</form>
