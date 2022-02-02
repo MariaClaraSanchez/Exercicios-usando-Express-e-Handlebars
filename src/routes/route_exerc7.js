@@ -36,16 +36,14 @@ Router.post('/exerc7', function (request, response) {
 
     if(hora_extra >= 0){
         salario_final = salario_regular + (hora_extra * (salario_hora_convertido+0.5));
-
         //console.log(`Cálculo : ${(hora_extra * (salario_hora_convertido+0.5))}`);
         //console.log(`Salário com hora extra: ${salario_final}`);
-        response.render('exerc7',{salario_final},erro);
     }
     else{
         salario_final = salario_regular;
         //console.log(`Salário sem hora extra: ${salario_final}`);
-        response.render('exerc7',{salario_final},erro);
     }
+    response.render('exerc7',{salario_final},erro);
 });
 
 

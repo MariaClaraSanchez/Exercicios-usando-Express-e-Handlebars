@@ -15,27 +15,21 @@ Router.post('/exerc10', function (request, response) {
     };
     const erro = false;
 
-
-     if ((!datas.nascimento) || (!datas.ingesso)) {
+    if ((!datas.nascimento) || (!datas.ingesso)) {
         return response.render('exerc10', {
             erro: true,
             mensagemErro: 'Por favor digite um dos dados!!',
         });
     }
     const idade_atual = 2022 - datas.nascimento;
-    const tempo_servico = 2022 -  datas.ingesso;
+    const tempo_servico = 2022 - datas.ingesso;
 
-    if((idade_atual>=65 || tempo_servico>=30) || ((idade_atual>=60 && tempo_servico>=25))){
-        response.render('exerc10', { situacao: 'REQUERER APOSENTADORIA',idade_atual,tempo_servico}, erro);
+    if ((idade_atual >= 65 || tempo_servico >= 30) || ((idade_atual >= 60 && tempo_servico >= 25))) {
+        response.render('exerc10', { situacao: 'REQUERER APOSENTADORIA', idade_atual, tempo_servico }, erro);
     }
-    else{
-        response.render('exerc10', { situacao: 'NÃO REQUERER APOSENTADORIA',idade_atual,tempo_servico }, erro);
+    else {
+        response.render('exerc10', { situacao: 'NÃO REQUERER APOSENTADORIA', idade_atual, tempo_servico }, erro);
     }
-
-    //console.log(idade_atual);
-    //console.log(tempo_servico);
-
-    
 });
 
 module.exports = Router;

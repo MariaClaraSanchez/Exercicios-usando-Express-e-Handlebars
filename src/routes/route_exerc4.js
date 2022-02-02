@@ -19,15 +19,10 @@ Router.post('/exerc4', function (request, response) {
         });
     } 
     
-    var custoConvertido;
-    custoConvertido = parseFloat(custoFabrica);
-
-    var distribuidor = (28 * custoConvertido) / 100;
-
-    var imposto = (45 * custoConvertido) / 100;
-
-    var custo_total = custoConvertido + distribuidor + imposto;
-    
+    const custoConvertido = parseFloat(custoFabrica);
+    const distribuidor = (28 * custoConvertido) / 100;
+    const imposto = (45 * custoConvertido) / 100;
+    const custo_total = custoConvertido + distribuidor + imposto;
     response.render('exerc4',{custo_total}, erro);
 });
 

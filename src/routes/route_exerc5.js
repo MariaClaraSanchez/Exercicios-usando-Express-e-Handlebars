@@ -13,24 +13,21 @@ Router.post('/exerc5', function (request, response) {
         salario: request.body.salario,
         reajuste: request.body.reajuste
     };
-    const erro = false;
-    console.log(dados.salario);
-    console.log(dados.reajuste);
 
-    if ((!dados.salario)|| (!dados.reajuste)) {
+    const erro = false;
+
+    if ((!dados.salario) || (!dados.reajuste)) {
         return response.render('exerc5', {
             erro: true,
             mensagemErro: 'Por favor digite um dos campos!!',
         });
-    } 
+    }
 
     var salarioConvertido = parseFloat(dados.salario);
     var reajusteConvertido = parseFloat(dados.reajuste);
+    salarioConvertido += (salarioConvertido * (reajusteConvertido / 100));
 
-    salarioConvertido += (salarioConvertido * (reajusteConvertido/100)); 
-
-    console.log(salarioConvertido);
-    response.render('exerc5',{salarioConvertido}, erro);
+    response.render('exerc5', { salarioConvertido }, erro);
 
 });
 module.exports = Router;

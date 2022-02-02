@@ -32,18 +32,11 @@ Router.post('/exerc8', function (request, response) {
         salario_comissao_1500 = salario_convertido + (1500* 0.03);
         diferenca = valor_venda_convertida - 1500;
         salario_final = salario_comissao_1500 + (diferenca * 0.05);
-        //console.log(`salario_1500 ${salario_comissao_1500}`);
-        //console.log(`Diferença ${diferenca}`);
-        //console.log(`Diferença do trem ${(diferenca * 0.05)}`);
-        //console.log(`Salário final ${salario_final}`);
-        response.render('exerc8',{salario_final},erro);
-
-
     }else{
         salario_final = salario_convertido + (valor_venda_convertida * 0.03);
-        //console.log(`Salário final ${salario_final}`);
-        response.render('exerc8',{salario_final},erro);
     }
+    
+    response.render('exerc8',{salario_final},erro);
 
 });
 

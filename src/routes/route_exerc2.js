@@ -1,7 +1,7 @@
 const express = require('express');
 const Router = express.Router();
 
-/*Exercício 1 */
+/*Exercício 2 */
 Router.get('/exerc2', function (request, response) {
     response.render('exerc2', {
         tituloPagina: 'Exercício Número 2'

@@ -14,27 +14,16 @@ Router.post('/exerc3', function (request, response) {
         peso: request.body.peso
     };
     const erro = false;
-    console.log(dados.altura);
-    console.log(dados.peso);
 
-    if ((!dados.altura)|| (!dados.peso)) {
+    if ((!dados.altura) || (!dados.peso)) {
         return response.render('exerc3', {
             erro: true,
             mensagemErro: 'Por favor digite um dos campos!!',
         });
-    } 
-
-    const alturaConvertida = parseFloat(dados.altura);
-    const pesoConvertido = parseFloat(dados.peso);
-
-    let IMC = pesoConvertido/Math.pow(alturaConvertida,2);
-
-    IMC = Math.round(IMC * 100)/100;
-
-    console.log(IMC);
-
-    response.render('exerc3',{IMC}, erro);
+    }
+    let IMC = dados.peso / Math.pow(dados.altura, 2);
+    IMC = Math.round(IMC * 100) / 100;
+    response.render('exerc3', { IMC }, erro);
 
 });
-
 module.exports = Router;
