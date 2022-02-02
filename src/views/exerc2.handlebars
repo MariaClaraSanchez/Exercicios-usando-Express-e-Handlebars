@@ -1,0 +1,17 @@
+<h2>{{tituloPagina}}</h2>
+
+
+<form method="post" action="/exerc2">
+    <p>Digite um número de 1 a 10 para que seja exibida a tabuada :</p>
+    <input type="number" name="numero" min="0" max="10"/>
+
+    <button type="submit" class="btn btn-primary">Enviar</button>
+
+    {{#if erro}}
+        <div class="alert alert-danger" role="alert">{{mensagemErro}}</div>
+    {{else}}
+        {{#each tabuada}}
+           <div>{{this}}</div>
+        {{/each}}
+    {{/if}}
+</form>
