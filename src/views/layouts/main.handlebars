@@ -5,17 +5,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>{{tituloPagina}}</title>
 </head>
 
 <body>
-    <header>
-        <h1>Cabeçalho Comum do Site</h1>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/"> Lista Maria Clara Sanchez</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-bookmark"></span> IFSULDEMINAS - Poços de Caldas -
+                        MG</a></li>
+            </ul>
+        </div>
+    </nav>
+    <header class="content">
+        <div class="col-md-12 container clearfix" style="text-align:center">
+            <h1>Lista de exercício da disciplina de Programação Web II</h1>
+        </div>
+        <div>
+            <h4 class="text-center">Essa lista tem o intuito de resolver uma lista de exercício
+                da disciplina de </h4>
+            <h4 class="text-center">Programação Web II, utilizando nodejs o framework Express e Handlebars </h4>
+
+        </div>
     </header>
     <nav>
+        
+        <ul class="list-group">
+            
+            <li><a class="list-group-item" href="/exerc1">Exercício 1</a></li>
+            <li><a class="list-group-item" href="/exerc2">Exercício 2</a></li>
+            <li><a class="list-group-item" href="/exerc3">Exercício 3</a></li>
+            <li><a class="list-group-item" href="/exerc4">Exercício 4</a></li>
+            <li><a class="list-group-item" href="/exerc5">Exercício 5</a></li>
+            <li><a class="list-group-item" href="/exerc6">Exercício 6</a></li>
+            <li><a class="list-group-item" href="/exerc7">Exercício 7</a></li>
+            <li><a class="list-group-item" href="/exerc8">Exercício 8</a></li>
+            <li><a class="list-group-item" href="/exerc9">Exercício 9</a></li>
+            <li><a class="list-group-item" href="/exerc10">Exercício 10</a></li>
+            <li><a class="list-group-item" href="/exerc11">Exercício 11</a></li>
+        </ul>
         <ul>
-            <li><a href="/">Home</a></li>
             <li><a href="/exerc1">Exercício 1</a></li>
             <li><a href="/exerc2">Exercício 2</a></li>
             <li><a href="/exerc3">Exercício 3</a></li>
@@ -30,6 +65,8 @@
         </ul>
     </nav>
     {{{body}}}
+
+
 </body>
 
 </html>
