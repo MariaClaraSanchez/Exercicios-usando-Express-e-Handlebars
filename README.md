@@ -40,8 +40,8 @@ para isso só alterar ele no arquivo `package.json`
 ```` js
 {
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js"
+    "start": "node caminho",
+    "dev": "nodemon caminho"
   },
   "dependencies": {
     "body-parser": "^1.19.1",
