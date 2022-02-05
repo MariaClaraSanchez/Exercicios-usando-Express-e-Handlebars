@@ -33,3 +33,24 @@ yarn start
 ```
 npm start
 ```
+## Observação
+Dependo do seu sistema operacional vai ser necessário mudar o caminho do arquivo index.js
+para isso só alterar ele no arquivo `package.json` 
+
+```` js
+
+email:
+  {
+  "scripts": {
+    "start": "node caminho",
+    "dev": "nodemon caminho"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "express": "^4.17.2",
+    "express-handlebars": "^6.0.2",
+    "nodemon": "^2.0.15",
+    "router": "^1.3.6"
+  }
+}
+```
