@@ -1,24 +1,52 @@
-<h2>{{tituloPagina}}</h2>
-
+<header class="content">
+    <div class="col-md-12 container clearfix" style="text-align:center">
+        <h1>Exercício 7</h1><br>
+    </div>
+    <div>
+        <h4 class="text-center">
+            A jornada de trabalho semanal de um funcionário é de 40 horas. O
+            funcionário que trabalhar mais de 40 horas receberá hora extra,
+        </h4>
+        <h4 class="text-center">
+            cujo cálculo é o valor da hora regular com um acréscimo de 50%.
+            Crie um algoritmo que receba o número de horas trabalhadas em
+        </h4>
+        <h4 class="text-center"> 
+            um mês, o salário por hora e exiba o salário total do funcionário,
+            que deverá ser acrescido de horas extras caso tenham sido
+        </h4>
+        <h4 class="text-center"> 
+            trabalhadas (considere que o mês possua 4 semanas exatas sempre).
+        </h4>
+    </div>
+</header> <br> <br>
 
 <form method="post" action="/exerc7">
-    <p>Digite os dados abaixo:</p>
+    <div class="text-center">
+        <h5 style="color: red;">Obs:</h5>
+        <h5> Digite os valores exatamente igual o exemplo e se for número inteiro pode 
+            colocar sem o "."</h5>
+    </div> <br>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-1">
+            <h3><strong>Digite os dados abaixo:</strong></h3>
+            <h3><input type="text" name="numero_horas_trabalhadas" placeholder="Número de horas : 160" /></h3>
+            <h3><input type="text" name="salario_hora" placeholder="Salário por hora : 50(reais)" /> </h3>
 
-    <div>
-        <input type="text" name="numero_horas_trabalhadas" placeholder="Número de horas : 160" />
-        <input type="text" name="salario_hora" placeholder="Salário por hora : 50(reais)" />
-    
-        <button type="submit" class="btn btn-primary">Enviar</button>
-    </div>
 
-    {{#if erro}}
-        <div class="alert alert-danger" role="alert">{{mensagemErro}}</div>
-    {{else}}
-        {{#if salario_final}}
-        <div>
-            <p><strong>Salário total é: </strong> R$ {{salario_final}}</p>
+            <h3><button type="submit" class="btn btn-primary">Enviar</button></h3>
         </div>
+        {{#if erro}}
+            <div class="col-md-5 col-md-offset-1">
+                <p class="alert alert-danger" role="alert">{{mensagemErro}}</p>
+            </div>
+        {{else}}
+            <div>
+            {{#if salario_final}}
+                <div class="col-md-5 col-md-offset-1">
+                    <h3 class="text-center"><strong>Salário total é: </strong> R${{salario_final}},00</h3>
+                </div>
+            {{/if}}
         {{/if}}
-    {{/if}}
-
+    </div>
 </form>

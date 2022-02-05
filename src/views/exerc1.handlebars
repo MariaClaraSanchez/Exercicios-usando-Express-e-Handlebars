@@ -1,17 +1,37 @@
-<h2>{{tituloPagina}}</h2>
-
+<header class="content">
+    <div class="col-md-12 container clearfix" style="text-align:center">
+        <h1>Exercício 1</h1><br>
+    </div>
+    <div>
+        <h4 class="text-center">
+            Crie um programa que receba um valor numérico de um formulário
+            <strong>(POST)</strong>
+        </h4>
+        <h4 class="text-center">
+            e exiba na tela se o valor é <strong> POSITIVO, NEGATIVO ou IGUAL A ZERO.</strong>
+        </h4>
+    </div>
+</header> <br> <br>
 
 <form method="post" action="/exerc1">
-    <p>Número:</p>
-    <input type="number" name="numero" value=""/>
-
-    <button type="submit" class="btn btn-primary">Enviar</button>
-
-    {{#if erro}}
-        <div class="alert alert-danger" role="alert">{{mensagemErro}}</div>
-    {{else}}
-        {{#if tipo}}
-            <p>Número : {{tipo}}</p>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-1">
+            <h3> <strong> Número: </strong>
+                <input type="number" name="numero" value="" />
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </h3>
+        </div>
+        {{#if erro}}
+        <div class="col-md-5 col-md-offset-1">
+            <p class="alert alert-danger" role="alert">{{mensagemErro}}</p>
+        </div>
+        {{else}}
+            {{#if tipo}}
+                <div class="col-md-5 col-md-offset-1">
+                    <h3 class="text-center"> <strong>Número é: </strong>{{tipo}}</h3>
+                </div>
+            {{/if}}
         {{/if}}
-    {{/if}}
+    </div>
+    </div>
 </form>

@@ -1,27 +1,65 @@
-<h2>{{tituloPagina}}</h2>
+<header class="content">
+    <div class="col-md-12 container clearfix" style="text-align:center">
+        <h1>Exercício 9</h1><br>
+    </div>
+    <div>
+        <h4 class="text-center">
+            <p>
+                Um posto está vendendo combustíveis com a seguinte tabela de
+                descontos:
+            <p>
+                Álcool: <br>
+                <b>-</b> Até 20 litros, desconto de 3% por litro. <br>
+                <b>-</b> Acima de 20 litros, desconto de 5% por litro. <br>
+            </p>
+            <p>
+                Gasolina:<br>
+                <b>-</b> Até 20 litros, desconto de 4% por litro. <br>
+                <b>-</b> Acima de 20 litros, desconto de 6% por litro.
+            </p>
+        </h4>
+        <h4 class="text-center">
+            Escreva um algoritmo que receba o número de litros vendidos e o
+            tipo de combustível (Álcool ou Gasolina),
+        </h4>
+        <h4 class="text-center">
+            calcule e exiba o valor a ser pago pelo cliente sabendo-se que o preço do litro da gasolina é R$ 3,30 e o
 
+        </h4>
+        <h4 class="text-center">
+             preço do litro do álcool é R$ 2,90.
+        </h4>
+    </div>
+</header> <br> <br>
 
 <form method="post" action="/exerc9">
-    <p>Digite os dados abaixo:</p>
-
-    <div>
-        <input type="number" min = 1 name="litros" placeholder="Litros: 20"/>
-        <select name="tipo">
-            <option>Álcool</option>
-            <option>Gasolina</option>
-        </select>
-        <button type="submit" class="btn btn-primary">Enviar</button>
+    <div class="text-center">
     </div>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-1">
+            <h3><strong>Digite os dados abaixo:</strong></h3>
+            <h3><input type="number" min=1 name="litros" placeholder="Litros: 20" /></h3>
 
-    {{#if erro}}
-        <div class="alert alert-danger" role="alert">{{mensagemErro}}</div>
-    {{else}}
-        {{#if categoria}}
-        <div>
-            <p><strong>O tipo do combustível é:</strong> {{categoria}}  <br>
-            <strong>Valor a pagar:</strong> R$ {{valor_pago}}</p>
+            <h3>    
+                <select name="tipo">
+                    <option>Álcool</option>
+                    <option>Gasolina</option>
+                </select>
+            </h3>
+            <h3><button type="submit" class="btn btn-primary">Enviar</button></h3>
         </div>
+        {{#if erro}}
+            <div class="col-md-5 col-md-offset-1">
+                <p class="alert alert-danger" role="alert">{{mensagemErro}}</p>
+            </div>
+        {{else}}
+            {{#if categoria}}
+                <div class="col-md-5 col-md-offset-1">
+                    <h3 class="text-center"><strong>O tipo do combustível é:</strong> {{categoria}} <br>
+                        <strong>Valor a pagar:</strong> R$ {{valor_pago}}
+                    </h3>
+                </div>
+            {{/if}}
         {{/if}}
-    {{/if}}
-
+    </div>
 </form>

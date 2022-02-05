@@ -1,24 +1,42 @@
-<h2>{{tituloPagina}}</h2>
-
+<header class="content">
+    <div class="col-md-12 container clearfix" style="text-align:center">
+        <h1>Exercício 3</h1><br>
+    </div>
+    <div>
+        <h4 class="text-center">
+            Crie um algoritmo para cálculo do <strong>IMC</strong> de e uma pessoa.
+        </h4>
+        <h4 class="text-center">
+            <i> Obs.: utilize uma função para processar os dados recebidos.</i>
+        </h4>
+    </div>
+</header> <br> <br>
 
 <form method="post" action="/exerc3">
-    <p>Digite seus dados:</p>
-
-    <div>
-        <input type="text" name="altura" placeholder="Altura : 1.7 (Metros)" />
-        <input type="text" name="peso" placeholder="Peso : 80 (Quilos)" />
-    
-        <button type="submit" class="btn btn-primary">Enviar</button>
+    <div class="text-center">
+        <h5 style="color: red;">Obs:</h5>
+        <h5> Digite o número com <b>"."</b>,exatamente igual o exemplo
+         pois se não os valores não vão dar certo!</h5>
     </div>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-1">
+            <h3> <strong> Digite seus dados: </strong></h3>
 
-    {{#if erro}}
-        <div class="alert alert-danger" role="alert">{{mensagemErro}}</div>
-    {{else}}
+            <h3><input type="text" name="altura" placeholder="Altura : 1.7 (Metros)" /></h3>
+            <h3><input type="text" name="peso" placeholder="Peso : 80 (Quilos)" /></h3>
+
+            <h3><button type="submit" class="btn btn-primary">Enviar</button></h3>
+        </div>
+        {{#if erro}}
+        <div class="col-md-5 col-md-offset-1">
+            <p class="alert alert-danger" role="alert">{{mensagemErro}}</p>
+        </div>
+        {{else}}
         {{#if IMC}}
-        <div>
-            <p><strong>IMC:</strong> {{IMC}}</p>
+        <div class="col-md-5 col-md-offset-1">
+            <h3 class="text-center"> <strong>Seu IMC é: </strong>{{IMC}}</h3>
         </div>
         {{/if}}
-    {{/if}}
-
+        {{/if}}
+    </div>
 </form>

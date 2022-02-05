@@ -10,15 +10,15 @@ Router.get('/exerc10', function (request, response) {
 
 Router.post('/exerc10', function (request, response) {
     let datas = {
-        nascimento: request.body.ano_nascimento,
-        ingesso: request.body.ano_ingresso,
+        nascimento: parseInt(request.body.ano_nascimento),
+        ingesso: parseInt(request.body.ano_ingresso),
     };
     const erro = false;
 
     if ((!datas.nascimento) || (!datas.ingesso)) {
         return response.render('exerc10', {
             erro: true,
-            mensagemErro: 'Por favor digite um dos dados!!',
+            mensagemErro: 'Por favor digite uma das datas!!',
         });
     }
     const idade_atual = 2022 - datas.nascimento;

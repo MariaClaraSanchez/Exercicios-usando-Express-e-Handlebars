@@ -4,12 +4,13 @@ const path = require('path');
 const bodyParse = require('body-parser');
 const router = require('./routes/all_routes');
 
+
 const PORT = process.env.PORT || 3000;
 
 const app = express();
 
 app.engine('handlebars', expressHandlebars.engine());
- 
+
 app.set('view engine','handlebars');
 app.set('views', path.join(__dirname, '/views'));
 

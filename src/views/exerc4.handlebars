@@ -1,22 +1,52 @@
-<h2>{{tituloPagina}}</h2>
-
+<header class="content">
+    <div class="col-md-12 container clearfix" style="text-align:center">
+        <h1>Exercício 4</h1><br>
+    </div>
+    <div>
+        <h4 class="text-center">
+            O custo de um carro novo ao consumidor é a soma do custo de
+            fábrica com a porcentagem do distribuidor
+        </h4>
+        <h4 class="text-center">
+            e dos impostos(aplicados ao custo de fábrica). Supondo que o percentual do
+            distribuidor seja de <strong>28%</strong> e os
+        </h4>
+        <h4 class="text-center">
+            impostos de <strong>45%</strong>, escreva um
+            algoritmo para receber de um formulário o custo de fábrica de um
+            carro
+        </h4>
+        <h4 class="text-center">
+            calcular e exibir o custo final do consumidor.
+        </h4>
+    </div>
+</header> <br> <br>
 
 <form method="post" action="/exerc4">
-    <p>Digite o custo da fábrica do carro : </p>
-
-    <div>
-        <input type="text" name="custoFabrica" placeholder="Exemplo: 100000.00" />
-        <button type="submit" class="btn btn-primary">Enviar</button>
-    </div>
-
-    {{#if erro}}
-        <div class="alert alert-danger" role="alert">{{mensagemErro}}</div>
-    {{else}}
-        {{#if custo_total}}
-        <div>
-            <p><strong>Custo Total do veículo é: </strong> R${{custo_total}},00</p>
+    <div class="text-center">
+        <h5 style="color: red;">Obs:</h5>
+        <h5> Digite o número com <b>"."</b>,exatamente igual o exemplo
+         pois se não os valores não vão dar certo!</h5>
+    </div> <br>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-1">
+            <h3> <strong>Digite o custo da fábrica do carro :</strong></h3>
+            <h3>
+                <input type="text" name="custoFabrica" placeholder="Exemplo: 100000.00" />
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </h3>
         </div>
+        {{#if erro}}
+            <div class="col-md-5 col-md-offset-1">
+                <p class="alert alert-danger" role="alert">{{mensagemErro}}</p>
+            </div>
+        {{else}}
+            {{#if custo_total}}
+                <div class="col-md-5 col-md-offset-1">
+                    <h3 class="text-center"> <strong>Custo Total do veículo é: </strong> R${{custo_total}},00</h3>
+                </div>
+            {{/if}}
         {{/if}}
-    {{/if}}
-
+    </div>
+    </div>
 </form>

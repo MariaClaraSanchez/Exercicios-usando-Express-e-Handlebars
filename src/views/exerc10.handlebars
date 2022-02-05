@@ -1,29 +1,65 @@
-<h2>{{tituloPagina}}</h2>
-
+<header class="content">
+    <div class="col-md-12 container clearfix" style="text-align:center">
+        <h1>Exercício 10</h1><br>
+    </div>
+    <div>
+        <h4 class="text-center">
+            <p>
+                Uma empresa quer verificar se um empregado está qualificado para
+                a aposentadoria ou não. Para estar em condições,
+            </p>
+        </h4>
+        <h4 class="text-center">
+            <p>
+                um dos seguintes requisitos deve ser satisfeito:
+            </p>
+        </h4>
+        <h4 class="text-center">
+            <b>-</b> Ter no mínimo 65 anos de idade <br>
+            <b>-</b> Ter trabalhado no mínimo 30 anos <br>
+            <b>-</b> Ter no mínimo 60 anos e ter trabalhado no mínimo 25 anos <br>
+        </h4>
+        <h4 class="text-center">
+            Com base nas informações acima, faça um algoritmo que receba: o
+            ano de nascimento do funcionário e o
+        </h4>
+        <h4 class="text-center">
+            ano de ingresso na empresa.O programa deverá exibir a idade e o tempo de trabalho do empregado e a mensagem
+        </h4>
+        <h4 class="text-center">
+            <b>“REQUERER APOSENTADORIA”</b> ou <b>“NÃO
+                REQUERER APOSENTADORIA”</b>
+        </h4>
+    </div>
+</header> <br> <br>
 
 <form method="post" action="/exerc10">
-    <p>Digite os dados abaixo:</p>
-
-    <div>
-        <p>Ano de Nascimento:
-            <input type="text" name="ano_nascimento" placeholder="Ano: 1998"/>
-        </p>
-        <p>Ano Ingresso na Empresa:
-            <input type="text" name="ano_ingresso" placeholder="Ano: 2021"/>
-        </p>
-        <button type="submit" class="btn btn-primary">Enviar</button>
+    <div class="text-center">
     </div>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-1">
+            <h3><strong>Digite os dados abaixo:</strong></h3>
 
-    {{#if erro}}
-        <div class="alert alert-danger" role="alert">{{mensagemErro}}</div>
-    {{else}}
+            <h3>Ano de Nascimento:
+                <input type="text" name="ano_nascimento" placeholder="Ano: 1998" />
+            </h3>
+            <h3>Ano Ingresso na Empresa:
+                <input type="text" name="ano_ingresso" placeholder="Ano: 2021" />
+            </h3>
+            <h3><button type="submit" class="btn btn-primary">Enviar</button></h3>
+        </div>
+        {{#if erro}}
+        <div class="col-md-5 col-md-offset-1">
+            <p class="alert alert-danger" role="alert">{{mensagemErro}}</p>
+        </div>
+        {{else}}
         {{#if situacao}}
-                <div>
-                    <strong>Idade:</strong> {{idade_atual}} Anos <br>
-                    <strong>Tempo de trabalho:</strong> {{tempo_servico}} ano_ingresso<br>
-                    <strong>Situação:</strong> {{situacao}}
-                </div>
+        <div class="col-md-5 col-md-offset-1">
+            <h4><strong>Idade:</strong> {{idade_atual}} Anos</h4>
+            <h4><strong>Tempo de trabalho:</strong> {{tempo_servico}} ano(s)</h4>
+            <h4><strong>Situação:</strong> {{situacao}}</h4>
+        </div>
         {{/if}}
-    {{/if}}
-
+        {{/if}}
+    </div>
 </form>

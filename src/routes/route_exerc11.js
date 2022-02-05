@@ -31,11 +31,8 @@ Router.post('/exerc11', function (request, response) {
     const cpf = dados.cpf;
     const idade = dados.idade;
 
-    dados_pessoais.push(`Nome: ${nome}\nE-mail: ${email}\nCPF: ${cpf}\nIdade: ${idade}`);
+    dados_pessoais.push(`Nome: ${nome}\n E-mail: ${email}\n CPF: ${cpf}\n Idade: ${idade} anos`);
+
     response.render('exerc11', {dados_pessoais}, erro);
 });
-
-
 module.exports = Router;
-
-

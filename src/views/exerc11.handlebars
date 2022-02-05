@@ -1,45 +1,78 @@
-<h2>{{tituloPagina}}</h2>
-
+<header class="content">
+    <div class="col-md-12 container clearfix" style="text-align:center">
+        <h1>Exercício 11</h1><br>
+    </div>
+    <div>
+        <h4 class="text-center">
+            Crie um formulário de cadastro simples com nome, email, cpf e
+            idade e exiba as informações preenchidas
+        </h4>
+        <h4 class="text-center">
+            na tela quando o formulário for submetido via POST. Explique também como todo o
+            processo de envio de informações,
+        </h4>
+        <h4 class="text-center">
+            processamento e resposta acontece na integração entre cliente e servidor considerando a
+            tecnologia do NodeJS, Express e Handlebars.
+        </h4>
+    </div>
+</header> <br> <br>
 
 <form method="post" action="/exerc11">
-    <p>Digite os dados abaixo:</p>
-
-
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Nome</label>
-        <div class="col-sm-10">
-            <input type="text" name="nome" placeholder="Seu nome">
-        </div>
+    <div class="text-center">
     </div>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-1">
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Nome</label>
+                <div class="col-sm-10">
+                    <input type="text" name="nome" placeholder="Seu nome">
+                </div>
+            </div>
 
-    <div class="form-group row">
-        <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-        <div class="col-sm-10">
-            <input type="text" name="email" placeholder="email@exemplo.com">
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="text" name="email" placeholder="email@exemplo.com">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">CPF</label>
+                <div class="col-sm-10">
+                    <input type="text" name="cpf" placeholder="xxx.xxx.xxx-xx">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Idade</label>
+                <div class="col-sm-10">
+                    <input type="text" name="idade" placeholder="28">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
         </div>
-    </div>
 
-    <div class="form-group row">
-        <label for="staticEmail" class="col-sm-2 col-form-label">CPF</label>
-        <div class="col-sm-10">
-            <input type="text" name="cpf" placeholder="xxx.xxx.xxx-xx">
-        </div>
-    </div>
-        <div class="form-group row">
-        <label for="staticEmail" class="col-sm-2 col-form-label">Idade</label>
-        <div class="col-sm-10">
-            <input type="text" name="idade" placeholder="28">
-        </div>
-    </div>
+        {{#if erro}}
+            <div class="col-md-5 col-md-offset-1">
+                <p class="alert alert-danger" role="alert">{{mensagemErro}}</p>
+            </div>
+        {{else}}
+            {{#if dados_pessoais}}
+                <div class="col-md-5 col-md-offset-1">
+                    <h3 class="text-center"><strong>{{dados_pessoais}}</strong></h3>
 
-    <button type="submit" class="btn btn-primary">Enviar</button>
-    
-    {{#if erro}}
-        <div class="alert alert-danger" role="alert">{{mensagemErro}}</div>
-    {{else}}
-        {{#each dados_pessoais}}
-            <div>{{this}}</div>
-        {{/each}}
-    {{/if}}
-
+                    <h3> Então temos um cliente que no caso é nossa aplicação
+                        e o mesmo faz uma requisição para o servidor no caso dos exercícios aqui 
+                        todas as requisições do cliente foram dadas pelo método post é para mostrar 
+                        toda a página web é utilizado o método get juntamente com toda a parte
+                        do handlebars que vai funcionar como um HTML e por fim o servidor vai retornar um Json,
+                        ai entrando no código eu utilizo o express para auxiliar a obtenção dos valores que vinha do web service
+                        esses valores foram armazenados em variáveis, pois no nodejs temos
+                        requisição e resposta ai utilizando o response para mandar para uma página X os valores que deveriam
+                        ser renderizados novamente para a página web. E creio que seja basicamente esse o processo.
+                    </h3>
+                </div>
+            {{/if}}
+        {{/if}}
+    </div>
 </form>
