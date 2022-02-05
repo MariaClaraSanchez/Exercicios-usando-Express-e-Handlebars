@@ -38,12 +38,10 @@ Dependo do seu sistema operacional vai ser necessário mudar o caminho do arquiv
 para isso só alterar ele no arquivo `package.json` 
 
 ```` js
-
-email:
-  {
+{
   "scripts": {
-    "start": "node caminho",
-    "dev": "nodemon caminho"
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
   },
   "dependencies": {
     "body-parser": "^1.19.1",
